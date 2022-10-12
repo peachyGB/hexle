@@ -9,8 +9,8 @@ function Game() {
   return (
     <div>
       <EndGame />
-      <GuessRow answer={answer} />
       <AnsColorDisp answer={answer} />
+      <GuessRow answer={answer} />
     </div>
   );
 }
