@@ -3,14 +3,21 @@ import EndGame from "./EndGame";
 import GuessRow from "./GuessRow";
 import AnsColorDisp from "./AnsColorDisp";
 import { useState } from "react";
+import Keyboard from "./Keyboard";
 
 function Game() {
-  let [answer, setAnser] = useState([]);
+  const NUMBER_OF_GUESSES = 6;
+
+  let rows = [];
+  for (let i = 0; i < NUMBER_OF_GUESSES; i++) {
+    rows.push(<GuessRow key={i} />);
+  }
   return (
     <div>
       <EndGame />
-      <AnsColorDisp answer={answer} />
-      <GuessRow answer={answer} />
+      <AnsColorDisp />
+      {rows}
+      <Keyboard />
     </div>
   );
 }

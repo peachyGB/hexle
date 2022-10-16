@@ -9,7 +9,7 @@ function App() {
         <h1>Hexle</h1>
       </header>
       <UH />
-      <Game />
+      <Game id="game-board" />
     </div>
   );
 }
