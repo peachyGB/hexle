@@ -1,29 +1,33 @@
 import React, { useState } from "react";
 import EndGame from "./EndGame";
 import GuessRow from "./GuessRow";
-import AnsColorDisp from "./AnsColorDisp";
+import ColorDisplay from "./ColorDisplay";
 import Keyboard from "./Keyboard";
 
 function Game() {
   const NUMBER_OF_GUESSES = 6;
-  let guessesRemaining = NUMBER_OF_GUESSES;
-  let nextVal = 0;
-  let userGuess = [];
-  let [pizza, setPizza] = useState();
-  let answer = ["1", "3", "f", "1", "9", "0"];
+  let [guessesRemaining, setGuessesRemaining] = useState(NUMBER_OF_GUESSES);
+  let [nextVal, setNextVal] = useState(0);
+  let [userGuess, setUserGuess] = useState([]);
+  let [guessHex, setGuessHex] = useState();
+  let [answer, setAnswer] = useState(["1", "3", "f", "1", "9", "0"]);
+  let [tempA, setTempA] = useState(answer);
+  let ansHex = answer.join("");
+  // console.log(ansHex);
 
-  //TYPING
+  //TYPING --> can we move this to the Keyboard component?
   function insertValue(val) {
     if (nextVal === 6) {
       return;
     } else {
       let row =
-        document.getElementsByClassName("letter-row")[6 - guessesRemaining];
+        document.getElementsByClassName("letter-row")[6 - guessesRemaining]; //---> can we dry "row" by moving it to global scope?
       let box = row.children[nextVal];
       box.textContent = val;
-      userGuess.push(val);
-      nextVal++;
-      console.log(`User Guess: ${userGuess}`);
+      // userGuess.push(val);
+      setUserGuess([...userGuess, val]);
+      setNextVal(nextVal + 1);
+      console.log(userGuess);
     }
   }
   //DELETE
@@ -36,62 +40,63 @@ function Game() {
         document.getElementsByClassName("letter-row")[6 - guessesRemaining];
       let box = row.children[nextVal - 1];
       box.textContent = "";
-      userGuess.pop();
-      nextVal--;
-      console.log(`User Guess: ${userGuess}`);
+      setUserGuess([...userGuess].pop());
+      setNextVal(nextVal - 1);
     }
   }
 
   // SUBMIT ANSWER
   function checkGuess() {
-    console.log(answer);
-    console.log(userGuess);
+    console.log(`Answer: ${answer}`);
+    console.log(`Users Guess: ${userGuess}`);
     let row =
       document.getElementsByClassName("letter-row")[6 - guessesRemaining];
 
     // Is guess long enough?
     if (userGuess.length != 6) {
       alert("Not enough letters!");
+      return;
     }
+    // sets the variable that fills the "current guess" container
+    setGuessHex(userGuess.join(""));
+
+    // setTempA(answer);
 
     for (let i = 0; i < 6; i++) {
       let letterColor = "";
       let box = row.children[i];
-      let letter = userGuess[i];
-      let letterPosition = answer.indexOf(userGuess[i]);
-      console.log(letterPosition);
-      // ######Bug Fix needed.
-      /* if a value is used more than once on guess but only appears once in the answer, 
-      all duplicates are showing yellow when they should be grey. 
-      */
-      if (letterPosition === -1) {
-        letterColor = "grey";
-      } else {
-        if (userGuess[i] === answer[i]) {
-          // shade green
-          letterColor = "green";
-        } else {
-          // shade box yellow
-          letterColor = "yellow";
-        }
+      // let letter = userGuess[i];
+      // let letterPosition = answer.indexOf(userGuess[i]);
 
-        // answer[letterPosition] = "#";
+      // #### so for some reason the # is not just replacing the 1st matching value, but all matching values. Do not want.
+
+      if (tempA[i] === userGuess[i]) {
+        letterColor = "green";
+        tempA[i] = "#";
+      } else if (tempA.includes(userGuess[i])) {
+        letterColor = "yellow";
+        tempA[tempA.indexOf(userGuess[i])] = "#";
+      } else {
+        letterColor = "grey";
       }
+
       let delay = 250 * i;
       setTimeout(() => {
         //shade box
         box.style.backgroundColor = letterColor;
         // shadeKeyBoard(letter, letterColor);
       }, delay);
+      console.log(`Temp Answer: ${tempA}`);
+      setTempA(answer);
     }
     if (userGuess === answer) {
       alert("You guessed right! Game over!");
-      guessesRemaining = 0;
+      setGuessesRemaining(0);
       return;
     } else {
-      guessesRemaining -= 1;
-      userGuess = [];
-      nextVal = 0;
+      setGuessesRemaining(guessesRemaining - 1);
+      setUserGuess([]);
+      setNextVal(0);
 
       if (guessesRemaining === 0) {
         alert("You've run out of guesses! Game over!");
@@ -109,7 +114,7 @@ function Game() {
   return (
     <div>
       <EndGame />
-      <AnsColorDisp />
+      <ColorDisplay ansHex={ansHex} guessHex={guessHex} />
       {rows}
       <Keyboard
         insertValue={insertValue}

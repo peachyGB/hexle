@@ -55,3 +55,37 @@
   cursor: pointer;
   text-transform: uppercase;
 }
+
+.ColorDisplay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
+#answer,
+#currentGuess {
+  border: 3px solid gray;
+  border-radius: 3px;
+  margin: 2px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  height: 10rem;
+  width: 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* #currentGuess {
+  border: 2px solid gray;
+  border-radius: 3px;
+  margin: 2px;
+  font-size: 2.5rem;
+  font-weight: 700;
+  height: 3rem;
+  width: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: lowercase;
+} */

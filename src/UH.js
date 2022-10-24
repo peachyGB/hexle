@@ -1,7 +1,7 @@
 import React from "react";
 
 function UH() {
-  return <div>UH</div>;
+  return <div></div>;
 }
 
 export default UH;

@@ -20,6 +20,10 @@ function Keyboard({ insertValue, deleteLetter, checkGuess }) {
         onClick={(e) => {
           hValueClick(e);
         }}
+        style={{
+          background: `#${value}${value}${value}${value}${value}${value}`,
+          color: "#ffffff",
+        }}
       >
         {value}
       </button>
@@ -33,6 +37,10 @@ function Keyboard({ insertValue, deleteLetter, checkGuess }) {
         onClick={(e) => {
           hValueClick(e);
         }}
+        style={{
+          background: `#${value}${value}${value}${value}${value}${value}`,
+          color: "#ffffff",
+        }}
       >
         {value}
       </button>
@@ -45,6 +53,9 @@ function Keyboard({ insertValue, deleteLetter, checkGuess }) {
         className="keyboard-button"
         onClick={(e) => {
           hValueClick(e);
+        }}
+        style={{
+          background: `#${value}${value}${value}${value}${value}${value}`,
         }}
       >
         {value}

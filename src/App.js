@@ -1,6 +1,7 @@
 import "./App.css";
 import UH from "./UH";
 import Game from "./Game";
+import Playground from "./Playground";
 
 function App() {
   return (
@@ -10,17 +11,9 @@ function App() {
       </header>
       <UH />
       <Game id="game-board" />
+      <Playground />
     </div>
   );
 }
 
 export default App;
-
-// import { WORDS } from "./words.js";
-
-// const NUMBER_OF_GUESSES = 6;
-// let guessesRemaining = NUMBER_OF_GUESSES;
-// let currentGuess = [];
-// let nextLetter = 0;
-// let rightGuessString = WORDS[Math.floor(Math.random() * WORDS.length)];
-// console.log(rightGuessString);
