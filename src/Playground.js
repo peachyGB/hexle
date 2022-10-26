@@ -34,6 +34,20 @@ function Playground() {
       <div>{ans}</div>
       <div>{guess}</div>
       <button onClick={runCode}>RUN</button>
+
+      <ol>
+        <li> Delete button messes up the length of userGuess</li>
+        <li> how hexcodes work page (modals and example images)</li>
+        <li> box shapes: circle for close, hexagon for correct</li>
+        <li>
+          color scheme: minimal, several greys, maybe a theme color for accents
+        </li>
+        <li>
+          Site Name: "Hexle" "Honey Codes" custom logo or a font only used for
+          site name
+        </li>
+        <li>Tab name and icon</li>
+      </ol>
     </div>
   );
 }

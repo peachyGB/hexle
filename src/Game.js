@@ -1,19 +1,21 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import EndGame from "./EndGame";
 import GuessRow from "./GuessRow";
 import ColorDisplay from "./ColorDisplay";
 import Keyboard from "./Keyboard";
 
-function Game() {
+function Game({ RNG }) {
   const NUMBER_OF_GUESSES = 6;
   let [guessesRemaining, setGuessesRemaining] = useState(NUMBER_OF_GUESSES);
   let [nextVal, setNextVal] = useState(0);
   let [userGuess, setUserGuess] = useState([]);
   let [guessHex, setGuessHex] = useState();
-  let [answer, setAnswer] = useState(["1", "3", "f", "1", "9", "0"]);
+  let answer = RNG.split(""); //["1", "3", "f", "1", "9", "0"];
   let [tempA, setTempA] = useState(answer);
   let ansHex = answer.join("");
   // console.log(ansHex);
+
+  // Generate a random hexcode
 
   //TYPING --> can we move this to the Keyboard component?
   function insertValue(val) {
@@ -60,15 +62,9 @@ function Game() {
     // sets the variable that fills the "current guess" container
     setGuessHex(userGuess.join(""));
 
-    // setTempA(answer);
-
     for (let i = 0; i < 6; i++) {
       let letterColor = "";
       let box = row.children[i];
-      // let letter = userGuess[i];
-      // let letterPosition = answer.indexOf(userGuess[i]);
-
-      // #### so for some reason the # is not just replacing the 1st matching value, but all matching values. Do not want.
 
       if (tempA[i] === userGuess[i]) {
         letterColor = "green";
@@ -79,6 +75,7 @@ function Game() {
       } else {
         letterColor = "grey";
       }
+      setTempA(answer);
 
       let delay = 250 * i;
       setTimeout(() => {
@@ -87,7 +84,6 @@ function Game() {
         // shadeKeyBoard(letter, letterColor);
       }, delay);
       console.log(`Temp Answer: ${tempA}`);
-      setTempA(answer);
     }
     if (userGuess === answer) {
       alert("You guessed right! Game over!");
