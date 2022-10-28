@@ -9,11 +9,11 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Hexle</h1>
+        <h1>HONEY CODE</h1>
       </header>
       <UH />
       <Game id="game-board" RNG={RNG} />
-      <Playground />
+      {/* <Playground /> */}
     </div>
   );
 }

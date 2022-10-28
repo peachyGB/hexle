@@ -29,11 +29,18 @@ function Playground() {
 
   return (
     <div style={{ fontSize: "2.5rem" }}>
+      <div className="letter-row2">
+        <div className="letter-box"></div>
+        <div className="letter-box-correct"></div>
+        <div className="letter-box-part-correct"></div>
+      </div>
       <h3>Playground</h3>
 
       <div>{ans}</div>
       <div>{guess}</div>
       <button onClick={runCode}>RUN</button>
+      <div id="hexagon"></div>
+      <div>&#x2B22;</div>
 
       <ol>
         <li> Delete button messes up the length of userGuess</li>

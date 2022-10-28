@@ -67,20 +67,21 @@ function Game({ RNG }) {
       let box = row.children[i];
 
       if (tempA[i] === userGuess[i]) {
-        letterColor = "green";
+        letterColor = "letter-box-correct";
         tempA[i] = "#";
       } else if (tempA.includes(userGuess[i])) {
-        letterColor = "yellow";
+        letterColor = "letter-box-part-correct";
         tempA[tempA.indexOf(userGuess[i])] = "#";
       } else {
-        letterColor = "grey";
+        letterColor = "letter-box";
       }
       setTempA(answer);
 
       let delay = 250 * i;
       setTimeout(() => {
         //shade box
-        box.style.backgroundColor = letterColor;
+        // box.style.backgroundColor = letterColor;
+        box.className = letterColor;
         // shadeKeyBoard(letter, letterColor);
       }, delay);
       console.log(`Temp Answer: ${tempA}`);
@@ -112,6 +113,7 @@ function Game({ RNG }) {
       <EndGame />
       <ColorDisplay ansHex={ansHex} guessHex={guessHex} />
       {rows}
+
       <Keyboard
         insertValue={insertValue}
         deleteLetter={deleteLetter}
