@@ -29,7 +29,7 @@ function Playground() {
 
   return (
     <div style={{ fontSize: "2.5rem" }}>
-      <div className="letter-row2">
+      {/* <div className="letter-row2">
         <div className="letter-box"></div>
         <div className="letter-box-correct"></div>
         <div className="letter-box-part-correct"></div>
@@ -40,21 +40,19 @@ function Playground() {
       <div>{guess}</div>
       <button onClick={runCode}>RUN</button>
       <div id="hexagon"></div>
-      <div>&#x2B22;</div>
-
+      <div>&#x2B22;</div> */}
+      <h3>Upcoming Edits</h3>
       <ol>
-        <li> how hexcodes work page (modals and example images)</li>
-        <li>
-          color scheme: minimal, several greys, maybe a theme color for accents,
-          background gradient
-        </li>
-        <li>
-          Site Name: "Hexle" "Honey Codes" custom logo or a font only used for
-          site name
-        </li>
-        <li>Tab name and icon</li>
+        <li>how hexcodes work page (modals and example images)</li>
         <li>end game modal</li>
+        <li>sacale down board to fit better on screen </li>
+        <li>work on background gradient,maybe a theme color for accents</li>
+        <li>design custom logo</li>
+        <li>Tab name and icon</li>
         <li>place buttons in single row</li>
+        <li>
+          buttons in a vertical row on the side?(maybe color displays too)
+        </li>
       </ol>
     </div>
   );

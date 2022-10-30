@@ -1,9 +1,8 @@
 import React from "react";
 
 function Keyboard({ insertValue, deleteLetter, checkGuess }) {
-  let firstRowValues = ["0", "1", "2", "3", "4"];
-  let secondRowValues = ["5", "6", "7", "8", "9"];
-  let thirdRowValues = ["a", "b", "c", "d", "e", "f"];
+  let firstRowValues = ["0", "1", "2", "3", "4", "5", "6", "7"];
+  let secondRowValues = ["8", "9", "a", "b", "c", "d", "e", "f"];
 
   // Consolelogs the value of the keyboar button clicked.
   function hValueClick(e) {
@@ -39,23 +38,7 @@ function Keyboard({ insertValue, deleteLetter, checkGuess }) {
         }}
         style={{
           background: `#${value}${value}${value}${value}${value}${value}`,
-          color: "#ffffff",
-        }}
-      >
-        {value}
-      </button>
-    );
-  });
-  let row3 = thirdRowValues.map((value) => {
-    return (
-      <button
-        key={value}
-        className="keyboard-button"
-        onClick={(e) => {
-          hValueClick(e);
-        }}
-        style={{
-          background: `#${value}${value}${value}${value}${value}${value}`,
+          color: "#000000",
         }}
       >
         {value}
@@ -65,8 +48,13 @@ function Keyboard({ insertValue, deleteLetter, checkGuess }) {
 
   return (
     <div id="keyboard-cont">
-      <div>{row1}</div>
-      <div className="first-row"></div>
+      {/* <div>{row1}</div> */}
+      <div className="first-row">
+        <div>
+          {row1}
+          {row2}
+        </div>
+      </div>
       <div className="second-row">
         <button
           className="keyboard-button"
@@ -74,15 +62,11 @@ function Keyboard({ insertValue, deleteLetter, checkGuess }) {
             deleteLetter();
           }}
         >
-          Del
+          Delete
         </button>
-        <div>{row2}</div>
         <button className="keyboard-button" onClick={checkGuess}>
           Enter
         </button>
-      </div>
-      <div className="third-row">
-        <div>{row3}</div>
       </div>
     </div>
   );

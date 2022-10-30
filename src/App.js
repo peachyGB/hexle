@@ -13,7 +13,7 @@ function App() {
       </header>
       <UH />
       <Game id="game-board" RNG={RNG} />
-      {/* <Playground /> */}
+      <Playground />
     </div>
   );
 }
