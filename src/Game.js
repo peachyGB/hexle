@@ -86,6 +86,7 @@ function Game({ RNG }) {
       }, delay);
       console.log(`Temp Answer: ${tempA}`);
     }
+
     if (userGuess === answer) {
       alert("You guessed right! Game over!");
       setGuessesRemaining(0);

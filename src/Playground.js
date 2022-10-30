@@ -47,13 +47,16 @@ function Playground() {
         <li> how hexcodes work page (modals and example images)</li>
         <li> box shapes: circle for close, hexagon for correct</li>
         <li>
-          color scheme: minimal, several greys, maybe a theme color for accents
+          color scheme: minimal, several greys, maybe a theme color for accents,
+          background gradient
         </li>
         <li>
           Site Name: "Hexle" "Honey Codes" custom logo or a font only used for
           site name
         </li>
         <li>Tab name and icon</li>
+        <li>end game modal</li>
+        <li>place buttons in single row</li>
       </ol>
     </div>
   );
