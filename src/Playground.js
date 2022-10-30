@@ -43,9 +43,7 @@ function Playground() {
       <div>&#x2B22;</div>
 
       <ol>
-        <li> Delete button messes up the length of userGuess</li>
         <li> how hexcodes work page (modals and example images)</li>
-        <li> box shapes: circle for close, hexagon for correct</li>
         <li>
           color scheme: minimal, several greys, maybe a theme color for accents,
           background gradient

@@ -68,7 +68,12 @@ function Keyboard({ insertValue, deleteLetter, checkGuess }) {
       <div>{row1}</div>
       <div className="first-row"></div>
       <div className="second-row">
-        <button className="keyboard-button" onClick={deleteLetter}>
+        <button
+          className="keyboard-button"
+          onClick={() => {
+            deleteLetter();
+          }}
+        >
           Del
         </button>
         <div>{row2}</div>

@@ -13,9 +13,6 @@ function Game({ RNG }) {
   let answer = RNG.split(""); //["1", "3", "f", "1", "9", "0"];
   let [tempA, setTempA] = useState(answer);
   let ansHex = answer.join("");
-  // console.log(ansHex);
-
-  // Generate a random hexcode
 
   //TYPING --> can we move this to the Keyboard component?
   function insertValue(val) {
@@ -42,7 +39,8 @@ function Game({ RNG }) {
         document.getElementsByClassName("letter-row")[6 - guessesRemaining];
       let box = row.children[nextVal - 1];
       box.textContent = "";
-      setUserGuess([...userGuess].pop());
+      setUserGuess(userGuess.slice(0, -1));
+      console.log(userGuess);
       setNextVal(nextVal - 1);
     }
   }
@@ -73,7 +71,7 @@ function Game({ RNG }) {
         letterColor = "letter-box-part-correct";
         tempA[tempA.indexOf(userGuess[i])] = "#";
       } else {
-        letterColor = "letter-box";
+        letterColor = "letter-box-wrong";
       }
       setTempA(answer);
 
