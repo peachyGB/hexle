@@ -1,8 +1,8 @@
 import React from "react";
 
 function Keyboard({ insertValue, deleteLetter, checkGuess }) {
-  let firstRowValues = ["0", "1", "2", "3", "4", "5", "6", "7"];
-  let secondRowValues = ["8", "9", "a", "b", "c", "d", "e", "f"];
+  let darkerGroupValues = ["0", "1", "2", "3", "4", "5", "6", "7"];
+  let lighterGroupValues = ["8", "9", "a", "b", "c", "d", "e", "f"];
 
   // Consolelogs the value of the keyboar button clicked.
   function hValueClick(e) {
@@ -10,8 +10,8 @@ function Keyboard({ insertValue, deleteLetter, checkGuess }) {
     insertValue(e.target.textContent);
   }
 
-  // Sets up 3 rows for the keyboard providing only the possible values for hexidecimal
-  let row1 = firstRowValues.map((value) => {
+  // Sets up keyboard buttons providing only the possible values for hexidecimal
+  let darkGroup = darkerGroupValues.map((value) => {
     return (
       <button
         key={value}
@@ -28,7 +28,7 @@ function Keyboard({ insertValue, deleteLetter, checkGuess }) {
       </button>
     );
   });
-  let row2 = secondRowValues.map((value) => {
+  let lightGroup = lighterGroupValues.map((value) => {
     return (
       <button
         key={value}
@@ -48,11 +48,10 @@ function Keyboard({ insertValue, deleteLetter, checkGuess }) {
 
   return (
     <div id="keyboard-cont">
-      {/* <div>{row1}</div> */}
       <div className="first-row">
         <div>
-          {row1}
-          {row2}
+          {darkGroup}
+          {lightGroup}
         </div>
       </div>
       <div className="second-row">

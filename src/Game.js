@@ -9,10 +9,14 @@ function Game({ RNG }) {
   let [guessesRemaining, setGuessesRemaining] = useState(NUMBER_OF_GUESSES);
   let [nextVal, setNextVal] = useState(0);
   let [userGuess, setUserGuess] = useState([]);
-  let [guessHex, setGuessHex] = useState();
+  let [guessHex, setGuessHex] = useState("ffffff");
   let answer = RNG.split(""); //["1", "3", "f", "1", "9", "0"];
   let [tempA, setTempA] = useState(answer);
   let ansHex = answer.join("");
+  console.log(guessHex);
+  // useEffect(() => {
+  document.body.style.background = `linear-gradient(to right, #${RNG},#${guessHex})`;
+  // }, []);
 
   //TYPING --> can we move this to the Keyboard component?
   function insertValue(val) {
@@ -109,7 +113,7 @@ function Game({ RNG }) {
   }
   return (
     <div>
-      <EndGame />
+      {/* <EndGame /> */}
       <ColorDisplay ansHex={ansHex} guessHex={guessHex} />
       {rows}
 

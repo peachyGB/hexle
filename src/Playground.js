@@ -49,7 +49,7 @@ function Playground() {
         <li>work on background gradient,maybe a theme color for accents</li>
         <li>design custom logo</li>
         <li>Tab name and icon</li>
-        <li>place buttons in single row</li>
+
         <li>
           buttons in a vertical row on the side?(maybe color displays too)
         </li>
