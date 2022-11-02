@@ -1,8 +1,8 @@
 import React from "react";
 
 function Keyboard({ insertValue, deleteLetter, checkGuess }) {
-  let darkerGroupValues = ["0", "1", "2", "3", "4", "5", "6", "7"];
-  let lighterGroupValues = ["8", "9", "a", "b", "c", "d", "e", "f"];
+  let darkerGroupValues = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+  let lighterGroupValues = ["a", "b", "c", "d", "e", "f"];
 
   // Consolelogs the value of the keyboar button clicked.
   function hValueClick(e) {
@@ -49,10 +49,7 @@ function Keyboard({ insertValue, deleteLetter, checkGuess }) {
   return (
     <div id="keyboard-cont">
       <div className="first-row">
-        <div>
-          {darkGroup}
-          {lightGroup}
-        </div>
+        <div>{darkGroup}</div>
       </div>
       <div className="second-row">
         <button
@@ -63,6 +60,7 @@ function Keyboard({ insertValue, deleteLetter, checkGuess }) {
         >
           Delete
         </button>
+        {lightGroup}
         <button className="keyboard-button" onClick={checkGuess}>
           Enter
         </button>

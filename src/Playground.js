@@ -46,13 +46,8 @@ function Playground() {
         <li>how hexcodes work page (modals and example images)</li>
         <li>end game modal</li>
         <li>sacale down board to fit better on screen </li>
-        <li>work on background gradient,maybe a theme color for accents</li>
+        <li>work on background gradient, maybe a theme color for accents</li>
         <li>design custom logo</li>
-        <li>Tab name and icon</li>
-
-        <li>
-          buttons in a vertical row on the side?(maybe color displays too)
-        </li>
       </ol>
     </div>
   );
