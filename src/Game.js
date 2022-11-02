@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import EndGame from "./EndGame";
 import GuessRow from "./GuessRow";
 import ColorDisplay from "./ColorDisplay";
@@ -10,13 +10,11 @@ function Game({ RNG }) {
   let [nextVal, setNextVal] = useState(0);
   let [userGuess, setUserGuess] = useState([]);
   let [guessHex, setGuessHex] = useState("ffffff");
-  let answer = RNG.split(""); //["1", "3", "f", "1", "9", "0"];
+  let answer = RNG.split("");
   let [tempA, setTempA] = useState(answer);
   let ansHex = answer.join("");
   console.log(guessHex);
-  // useEffect(() => {
   document.body.style.background = `linear-gradient(to right, #${RNG},#${guessHex})`;
-  // }, []);
 
   //TYPING --> can we move this to the Keyboard component?
   function insertValue(val) {
@@ -27,7 +25,6 @@ function Game({ RNG }) {
         document.getElementsByClassName("letter-row")[6 - guessesRemaining]; //---> can we dry "row" by moving it to global scope?
       let box = row.children[nextVal];
       box.textContent = val;
-      // userGuess.push(val);
       setUserGuess([...userGuess, val]);
       setNextVal(nextVal + 1);
       console.log(userGuess);
@@ -79,12 +76,10 @@ function Game({ RNG }) {
       }
       setTempA(answer);
 
+      // Changes box shape sequentially
       let delay = 250 * i;
       setTimeout(() => {
-        //shade box
-        // box.style.backgroundColor = letterColor;
         box.className = letterColor;
-        // shadeKeyBoard(letter, letterColor);
       }, delay);
       console.log(`Temp Answer: ${tempA}`);
     }

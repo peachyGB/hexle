@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 
 function Playground() {
+  // Component for testing and writing code without needing to modify current code, as well as some notes
+
   let [ans, setAns] = useState(["f", "f", "0", "1", "2", "3"]);
   let [guess, setGuess] = useState(["f", "f", "f", "f", "2", "3"]);
   let tempA = ["f", "f", "0", "1", "2", "3"];
@@ -29,23 +31,14 @@ function Playground() {
 
   return (
     <div style={{ fontSize: "2.5rem" }}>
-      {/* <div className="letter-row2">
-        <div className="letter-box"></div>
-        <div className="letter-box-correct"></div>
-        <div className="letter-box-part-correct"></div>
-      </div>
-      <h3>Playground</h3>
-
-      <div>{ans}</div>
-      <div>{guess}</div>
-      <button onClick={runCode}>RUN</button>
-      <div id="hexagon"></div>
-      <div>&#x2B22;</div> */}
       <h3>Upcoming Edits</h3>
       <ol>
         <li>how hexcodes work page (modals and example images)</li>
         <li>end game modal</li>
-        <li>sacale down board to fit better on screen </li>
+        <li>
+          set answer as background and give current guess a gradient background
+          to blend in
+        </li>
         <li>work on background gradient, maybe a theme color for accents</li>
         <li>design custom logo</li>
       </ol>
