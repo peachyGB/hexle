@@ -12,9 +12,9 @@ function App() {
       <header className="App-header">
         <h1>HONEY CODE</h1>
       </header>
-      {/* <UH /> */}
       <Game id="game-board" RNG={RNG} />
       {/* <Playground /> */}
+      <UH />
     </div>
   );
 }

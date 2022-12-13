@@ -14,7 +14,7 @@ function Game({ RNG }) {
   let [tempA, setTempA] = useState(answer);
   let ansHex = answer.join("");
   console.log(guessHex);
-  document.body.style.background = `linear-gradient(to right, #${RNG},#${guessHex})`;
+  // document.body.style.background = `linear-gradient(to right, #${RNG},#${guessHex})`;
 
   //TYPING --> can we move this to the Keyboard component?
   function insertValue(val) {
