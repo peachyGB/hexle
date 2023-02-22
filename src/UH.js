@@ -19,7 +19,7 @@ function UH() {
         Hexicecimal works in the same way but counting 0 to 15. Since there are
         only 10 numerical symbols in our lexicon, (0, 1, 2, 3, 4, 5, 6, 7, 8, 9)
         letters are used in place of double digit numbers (a represents 10, b
-        represents 11, ... f represents 15)
+        represents 11, ... f represents 15) 01 = 1,
       </p>
       <img src={zeroF} alt="counting in base 16" />
       <h2>Hex Code</h2>
